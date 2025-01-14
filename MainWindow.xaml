@@ -1,0 +1,104 @@
+﻿<Window x:Class="YGOCalculator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:YGOCalculator"
+        mc:Ignorable="d"
+        Title="YGO LP Rechner" Height="520" Width="800" FontFamily="Arial" MinWidth="800" MinHeight="520" Icon="Resources/YGO_icon.ico">
+
+    <Grid Height="504" VerticalAlignment="Bottom">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="180"/>
+        </Grid.RowDefinitions>
+        <Label HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25" Grid.Column="0" Grid.Row="0" Content="Spieler 1"/>
+        <Label HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25" Grid.Column="1" Grid.Row="0" Content="Spieler 2"/>
+        <Label HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" Grid.Column="0" Grid.Row="1">
+            Lebenspunkte
+        </Label>
+        <Label HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" Grid.Column="1" Grid.Row="1">
+            Lebenspunkte
+        </Label>
+        <Label HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" Grid.Column="0" Grid.Row="2" Name="Player1HPLabel">
+            8000
+        </Label>
+        <Label HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" Grid.Column="1" Grid.Row="2" Name="Player2HPLabel">
+            8000
+        </Label>
+        <Grid Grid.Column="0" Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Margin="5" Name="Player1AddHPButton" FontSize="30" Click="Player1AddHPButton_Click">
+                +
+            </Button>
+            <Button Grid.Column="1" Margin="5" Name="Player1LoseHPButton" FontSize="30" Click="Player1LoseHPButton_Click">
+                -
+            </Button>
+        </Grid>
+        <Grid Grid.Column="1" Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Margin="5" Name="Player2AddHPButton" FontSize="30" Click="Player2AddHPButton_Click">
+                +
+            </Button>
+            <Button Grid.Column="1" Margin="5" Name="Player2LoseHPButton" FontSize="30" Click="Player2LoseHPButton_Click">
+                -
+            </Button>
+        </Grid>
+        <TextBox Grid.Column="0" Grid.Row="4" Name="Player1EditHPTextBox" VerticalAlignment="Center" HorizontalAlignment="Center" MinWidth="120" TextAlignment="Center" PreviewTextInput="TextBox_PreviewTextInput">
+            1000
+
+        </TextBox>
+        <TextBox Grid.Column="1" Grid.Row="4" Name="Player2EditHPTextBox" VerticalAlignment="Center" HorizontalAlignment="Center" MinWidth="120" TextAlignment="Center" PreviewTextInput="TextBox_PreviewTextInput">
+            1000
+
+        </TextBox>
+        <Grid Grid.Column="0" Grid.Row="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Margin="10,10,10,10" Name="ChangeTextBox1000Button" FontSize="30" Content="1000" Click="ChangeTextBox1000Button_Click"/>
+            <Button Grid.Column="1" Margin="10,10,10,10" Name="ChangeTextBox500Button" FontSize="30" Content="500" Click="ChangeTextBox500Button_Click"/>
+            <Button Grid.Column="2" Margin="10,10,10,10" Name="ChangeTextBox100Button" FontSize="30" Content="100" Click="ChangeTextBox100Button_Click"/>
+            <Button Grid.Column="3" Margin="10,10,10,10" Name="ChangeTextBoxDivideBy2Button" FontSize="30" Content="LP/2" Click="ChangeTextBoxDivideBy2Button_Click"/>
+        </Grid>
+        <Grid Grid.Column="1" Grid.Row="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Margin="10" Name="Player2ChangeTextBox1000Button" FontSize="30" Content="1000" Click="Player2ChangeTextBox1000Button_Click"/>
+            <Button Grid.Column="1" Margin="10" Name="Player2ChangeTextBox500Button" FontSize="30" Content="500" Click="Player2ChangeTextBox500Button_Click"/>
+            <Button Grid.Column="2" Margin="10" Name="Player2ChangeTextBox100Button" FontSize="30" Content="100" Click="Player2ChangeTextBox100Button_Click"/>
+            <Button Grid.Column="3" Margin="10" Name="Player2ChangeTextBoxDivideBy2Button" FontSize="30" Content="LP/2" Click="Player2ChangeTextBoxDivideBy2Button_Click"/>
+        </Grid>
+        <Button Grid.Column="0" Margin="150,5,150,5" x:Name="ResetPlayer1" FontSize="30" Content="Reset" Click="ResetPlayer1_Click" Grid.Row="6"/>
+        <Button Grid.Column="1" Margin="150,5,150,5" x:Name="ResetPlayer2" FontSize="30" Content="Reset" Click="ResetPlayer2_Click" Grid.Row="6"/>
+        <TextBox Grid.Row="7" x:Name="Kartensuche" VerticalAlignment="Top" HorizontalAlignment="Center" MinWidth="120" TextAlignment="center" Text="Cardcluster Suche" Margin="0,19,0,0" Width="352" Height="25" KeyDown="Kartensuche_KeyDown" Grid.Column="1"/>
+        <Button Grid.Column="1" Margin="156,49,156,79" x:Name="Search" FontSize="20" Content="Suchen" Click="SearchButton_Click" Grid.Row="7"/>
+        <RichTextBox Grid.Row="7" x:Name="HistoryRichTextBox" VerticalAlignment="Top" MinWidth="150" Margin="32,10,32,0" Height="130" VerticalScrollBarVisibility="Auto" AcceptsReturn="True" IsReadOnly="True"/>
+        <Label Name="TimerLabel" Content="50:00" FontSize="24" VerticalAlignment="Center" Margin="365,0,0,0" Grid.ColumnSpan="2" Grid.Row="1" HorizontalAlignment="Left" Width="70"/>
+        <Button Name="TimerStartStop" Content="Start Timer" Click="StartTimerButton_Click" HorizontalAlignment="Left" Margin="327,22,0,1"/>
+        <Button Content="Reset Timer" Click="ResetTimerButton_Click" HorizontalAlignment="Left" Margin="10,22,0,0" VerticalAlignment="Top" Height="17" Grid.Column="1" RenderTransformOrigin="-0.765,0.768"/>
+    </Grid>
+</Window>
