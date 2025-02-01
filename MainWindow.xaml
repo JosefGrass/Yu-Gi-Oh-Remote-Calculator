@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:YGOCalculator"
         mc:Ignorable="d"
-        Title="YGO LP Rechner" Height="520" Width="800" FontFamily="Arial" MinWidth="800" MinHeight="520" Icon="Resources/YGO_icon.ico">
+        Title="YGO LP Rechner" Height="520" Width="800" FontFamily="Arial" MinWidth="800" MinHeight="540" ResizeMode="NoResize" Icon="Resources/YGO_icon.ico">
 
     <Grid Height="504" VerticalAlignment="Bottom">
         <Grid.ColumnDefinitions>

@@ -13,11 +13,19 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="Resources\YGO_icon.ico" />
+    <Content Include="Resources\YGO_icon.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="Resources\YGO_icon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Resources\timeout.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
